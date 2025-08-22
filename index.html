@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Data Science Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siddharth Adhikari - Data Science Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="loader"></div>
+        <div class="loading-content">
+            <div class="loader-logo">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="loading-text">Loading Data...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="floating-particles" id="particles"></div>
+        <div class="network-grid"></div>
+        <canvas id="dataVisualization"></canvas>
     </div>
 
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">DataSci Portfolio</div>
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>SIDDHARTH ADHIKARI</span>
+            </div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#certifications"><i class="fas fa-award"></i> Certifications</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -37,18 +58,69 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Data Science Visionary</h1>
-                <p class="subtitle">Transforming Raw Data into Intelligent Insights</p>
-                <a href="#projects" class="cta-button">Explore My Universe</a>
-            </div>
-            <div class="hero-graphics">
-                <div class="data-visualization">
-                    <div class="chart-circle"></div>
-                    <div class="chart-circle"></div>
-                    <div class="chart-circle"></div>
-                    <div class="floating-icons">📊</div>
-                    <div class="floating-icons">🤖</div>
-                    <div class="floating-icons">📈</div>
+                <div class="hero-text">
+                    <div class="greeting">Hello, I'm</div>
+                    <h1>Siddharth Adhikari</h1>
+                    <div class="role-container">
+                        <span class="role-prefix">Data Science</span>
+                        <span class="typewriter" id="typewriter"></span>
+                    </div>
+                    <p class="subtitle">Transforming complex data into actionable insights through advanced analytics and machine learning</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="cta-button primary">
+                            <i class="fas fa-rocket"></i>
+                            Explore My Work
+                        </a>
+                        <a href="#contact" class="cta-button secondary">
+                            <i class="fas fa-coffee"></i>
+                            Let's Connect
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <!-- <div class="stat-item">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3+ Internsips</div>
+                            <div class="stat-label">Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Technologies</div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="data-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Real-time Analytics</div>
+                            <div class="dashboard-status">
+                                <span class="status-dot"></span>
+                                Live
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="heroChart"></canvas>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-chart-line"></i></div>
+                                <!-- <div class="metric-value">94%</div> -->
+                                <!-- <div class="metric-label">Accuracy</div> -->
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-database"></i></div>
+                                <!-- <div class="metric-value">2.3M</div> -->
+                                <!-- <div class="metric-label">Records</div> -->
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-clock"></i></div>
+                                <!-- <div class="metric-value">15ms</div>
+                                <div class="metric-label">Latency</div> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,15 +129,59 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2><i class="fas fa-user-astronaut"></i> About Me</h2>
             <div class="about-content">
                 <div class="profile-container">
-                    <div class="profile-img">🚀</div>
+                    <div class="profile-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFJJy4HYj03RA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725550509093?e=1758758400&v=beta&t=4xMMm6WEdP8OvLH6UGzBLYuf0wbJ-crZHFDFKVUwgc8" alt="Siddharth Adhikari" />
+                        <div class="profile-overlay">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <!-- <i class="fab fa-github"></i> -->
+                            <a href="https://github.com/siddhyaaddy" target="_blank"><i class="fab fa-github"></i></a>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="profile-stat">
+                            <!-- <i class="fab fa-linkedin"></i> -->
+                            <a href="https://www.linkedin.com/in/siddharth-adhikari-40199b203/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <span>LinkedIn</span>
+                        </div>
+                        <div class="profile-stat">
+                            <!-- <i class="fab fa-kaggle"></i> -->
+                            <a href="https://www.kaggle.com/siddharthadhikari07" target="_blank"><i class="fab fa-kaggle"></i></a>
+                            <span>Kaggle</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-text">
-                    <p>Welcome to my digital realm! I'm a passionate data science student on a mission to decode the mysteries hidden within data. My journey began with curiosity and has evolved into a deep fascination with machine learning algorithms and statistical analysis.</p>
-                    <p>I specialize in creating intelligent solutions that bridge the gap between complex data and actionable business insights. From predictive modeling to deep learning applications, I thrive on challenges that push the boundaries of what's possible.</p>
-                    <p>When I'm not immersed in datasets, you'll find me competing in Kaggle competitions, contributing to open-source projects, or exploring the latest breakthroughs in artificial intelligence and quantum computing.</p>
+                    <div class="about-intro">
+                        <h3>Data Science Professional</h3>
+                        <!-- <p class="intro-text">Passionate about extracting meaningful insights from complex datasets and building intelligent systems that drive business value.</p> -->
+                    </div>
+                    <div class="intro-text">
+                        <p>I am currently pursuing a Master’s in Engineering Science in Data Science at the University at Buffalo, building on my background in Computer Engineering. My interests lie in applying data science techniques to solve real-world problems, with a strong focus on data analysis, predictive modeling, and machine learning.
+I am passionate about uncovering insights from complex datasets and developing innovative data-driven solutions that create impact. With hands-on experience in tools such as Python, SQL, TensorFlow, and PyTorch, I am eager to contribute to projects involving analytics, artificial intelligence, and scalable data systems.
+I am actively seeking opportunities where I can apply my skills in data science, while continuing to learn and grow. Let’s connect if you are working on or hiring for data-driven projects and collaborations.</p>
+
+                    </div>
+                    <!-- <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>Published Research Papers</span>
+                            <a href="https://ijarcce.com/wp-content/uploads/2024/07/IJARCCE.2024.13714.pdf" target="_blank" class="project-link"></a>
+                        </div>
+                    <div class="highlight-item certification-link-item" onclick="scrollToCertifications()">
+                        <i class="fas fa-award"></i>
+                        <span>Data Science Certifications</span>
+                    </div> -->
+                        <!-- <div class="highlight-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Open Source Contributor</span>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,54 +190,175 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2>Technical Arsenal</h2>
+            <h2><i class="fas fa-brain"></i> Technical Arsenal</h2>
+            <div class="skills-intro">
+                <p>A comprehensive toolkit for modern data science and machine learning</p>
+            </div>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon">🐍</div>
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Scala</span>
+                <div class="skill-category" data-category="programming">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Programming Languages</h3>
+                        <!-- <div class="skill-level">Expert</div> -->
+                    </div>
+                    <div class="skill-content">
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Python</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>R</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>SQL</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>MATLAB</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="75"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+
+                <div class="skill-category" data-category="ml">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Machine Learning</h3>
+                        <!-- <div class="skill-level">Advanced</div> -->
+                    </div>
+                    <div class="skill-content">
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-brain"></i> Scikit-learn</span>
+                            <span class="skill-tag"><i class="fas fa-network-wired"></i> TensorFlow</span>
+                            <span class="skill-tag"><i class="fas fa-fire"></i> PyTorch</span>
+                            <span class="skill-tag"><i class="fas fa-layer-group"></i> Keras</span>
+                            <span class="skill-tag"><i class="fas fa-tree"></i> XGBoost</span>
+                            <span class="skill-tag"><i class="fas fa-bolt"></i> LightGBM</span>
+                            <span class="skill-tag"><i class="fas fa-bolt"></i> Deep Learning</span>
+                            <span class="skill-tag"><i class="fas fa-bolt"></i> Computer Vision</span>
+                            <span class="skill-tag"><i class="fas fa-bolt"></i> NLP</span>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-icon">🧠</div>
-                    <h3>Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">XGBoost</span>
-                        <span class="skill-tag">LightGBM</span>
+
+                <div class="skill-category" data-category="analysis">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Data Analysis &amp; Visualization</h3>
+                        <!-- <div class="skill-level">Expert</div> -->
+                    </div>
+                    <div class="skill-content">
+                        <div class="analysis-tools">
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-python"></i></div>
+                                <div class="tool-name">Pandas &amp; NumPy</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-chart-bar"></i></div>
+                                <div class="tool-name">Matplotlib &amp; Seaborn</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+                                <div class="tool-name">Plotly &amp; Dash</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-icon">📊</div>
-                    <h3>Data Analysis</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Plotly</span>
-                        <span class="skill-tag">D3.js</span>
+
+                <div class="skill-category" data-category="cloud">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud &amp; DevOps</h3>
+                        <!-- <div class="skill-level">Intermediate</div> -->
                     </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">☁️</div>
-                    <h3>Cloud & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Spark</span>
+                    <div class="skill-content">
+                        <div class="cloud-services">
+                            <div class="service-item aws">
+                                <i class="fab fa-aws"></i>
+                                <span>AWS</span>
+                            </div>
+                            <div class="service-item docker">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="service-item kubernetes">
+                                <i class="fas fa-dharmachakra"></i>
+                                <span>Kubernetes</span>
+                            </div>
+                            <div class="service-item git">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            
+                            <!-- Tableau with custom SVG logo -->
+                            <div class="service-item tableau">
+                                <div class="service-logo">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <g fill="#e97627">
+                                            <rect x="30" y="4" width="4" height="12" rx="1"/>
+                                            <rect x="30" y="48" width="4" height="12" rx="1"/>
+                                            <rect x="4" y="30" width="12" height="4" rx="1"/>
+                                            <rect x="48" y="30" width="12" height="4" rx="1"/>
+                                            <rect x="13" y="13" width="10" height="3" rx="1" transform="rotate(45 18 14.5)"/>
+                                            <rect x="41" y="13" width="10" height="3" rx="1" transform="rotate(-45 46 14.5)"/>
+                                            <rect x="13" y="48" width="10" height="3" rx="1" transform="rotate(-45 18 49.5)"/>
+                                            <rect x="41" y="48" width="10" height="3" rx="1" transform="rotate(45 46 49.5)"/>
+                                            <rect x="26" y="26" width="12" height="12" rx="2" fill="#e97627"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>Tableau</span>
+                            </div>
+                            
+                            <!-- PowerBI with custom SVG logo -->
+                            <div class="service-item powerbi">
+                                <div class="service-logo">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <g fill="#f2c811">
+                                            <rect x="10" y="40" width="10" height="20" rx="2"/>
+                                            <rect x="23" y="30" width="10" height="30" rx="2"/>
+                                            <rect x="36" y="20" width="10" height="40" rx="2"/>
+                                            <rect x="49" y="10" width="10" height="50" rx="2"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>PowerBI</span>
+                            </div>
+                            
+                            <!-- Apache Spark with custom SVG logo -->
+                            <div class="service-item spark">
+                                <div class="service-logo">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                        <g fill="#e25a1c">
+                                            <path d="M38 8 L28 32 L36 32 L26 56 L44 24 L34 24 Z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>Apache Spark</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,74 +368,241 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <h2><i class="fas fa-project-diagram"></i> Featured Projects</h2>
+            <div class="projects-intro">
+                <p>End-to-end data science solutions demonstrating the full ML lifecycle</p>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="analytics">Analytics</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">🎯</div>
+                <div class="project-card" data-category="ml analytics">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-taxi"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>AI-Powered Customer Churn Prediction</h3>
-                        <p>Developed an ensemble machine learning model using Random Forest, XGBoost, and Neural Networks to predict customer churn with 94% accuracy. Implemented real-time prediction API and interactive dashboard.</p>
+                        <h3>NYC Taxi Demand Forecasting</h3>
+                        <p>End-to-end ML pipeline using NYC Yellow Taxi data (2023-2024) with real-time predictions and interactive dashboards powered by Streamlit.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LightGBM</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">94.2%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Data Points</span>
+                                <span class="metric-value">2.3M</span>
+                            </div>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">🔗 GitHub</a>
-                            <a href="#" target="_blank">🚀 Live Demo</a>
+                            <a href="https://github.com/siddhyaaddy/NYC_taxi" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <!-- <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a> -->
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">💬</div>
+                <div class="project-card" data-category="ml analytics">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-route"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Real-Time Sentiment Analysis Engine</h3>
-                        <p>Built a scalable sentiment analysis system using LSTM networks and BERT transformers. Processes 10,000+ social media posts per minute with 96% accuracy, deployed on AWS with auto-scaling.</p>
+                        <h3>RideFlow Analytics</h3>
+                        <p>AWS-powered ML pipeline for taxi demand prediction using advanced time series forecasting and real-time data processing.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">LightGBM</span>
+                            <span class="tech-tag">Apache Kafka</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Latency</span>
+                                <span class="metric-value">&lt; 100ms</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Throughput</span>
+                                <span class="metric-value">10K/sec</span>
+                            </div>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">🔗 GitHub</a>
-                            <a href="#" target="_blank">🚀 Live Demo</a>
+                            <a href="https://github.com/siddhyaaddy/rideflow-analytics" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">📈</div>
+
+                <div class="project-card" data-category="ml">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-route"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Quantum-Enhanced Stock Forecasting</h3>
-                        <p>Revolutionary time series forecasting system combining traditional ARIMA models with quantum computing algorithms. Achieved 23% improvement in prediction accuracy over classical methods.</p>
+                        <h3>Airport Management System</h3>
+                        <p>A comprehensive web-based airport management system built with Python, Streamlit, and SQL database integration for efficient airport operations management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">🔗 GitHub</a>
-                            <a href="#" target="_blank">🚀 Live Demo</a>
+                            <a href="https://github.com/siddhyaaddy/airport-management-system" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">🧬</div>
+
+                <div class="project-card" data-category="ml">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-route"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Deep Learning Medical Diagnosis</h3>
-                        <p>Convolutional Neural Network for automated medical image analysis with 97% accuracy in detecting anomalies. Collaborated with medical professionals to ensure clinical relevance.</p>
+                        <h3>Citi Bike Analysis</h3>
+                        <p>This project provides an end-to-end solution for analyzing Citi Bike usage patterns using machine learning techniques. It includes data processing pipelines, model training workflows, and inference capabilities to derive insights from bike-sharing data..</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CI/CD Workflows</span>
+                            <span class="tech-tag">Git Actions</span>
+                            <span class="tech-tag">Pipelines</span>
+                            <span class="tech-tag">Exploratory Analysis</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">🔗 GitHub</a>
-                            <a href="#" target="_blank">📄 Paper</a>
+                            <a href="https://github.com/siddhyaaddy/citi_bike" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">🌍</div>
+
+                <div class="project-card" data-category="cv">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-tshirt"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge research">Research</span>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Climate Change Impact Analyzer</h3>
-                        <p>Interactive data visualization platform analyzing global climate patterns using satellite data and machine learning. Featured in environmental science conference presentation.</p>
+                        <h3>Virtual Trial Room</h3>
+                        <p>Computer vision and AR-powered virtual fitting system with real-time pose estimation and garment overlay. Published research paper included.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <div class="project-achievements">
+                            <div class="achievement">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Published Paper</span>
+                            </div>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">🔗 GitHub</a>
-                            <a href="#" target="_blank">🚀 Live Demo</a>
+                            <a href="https://github.com/siddhyaaddy/Virtual-Trial-Room" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://ijarcce.com/wp-content/uploads/2024/07/IJARCCE.2024.13714.pdf" target="_blank" class="project-link">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">🎮</div>
+                <div class="project-card" data-category="ml">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>AI Game Strategy Optimizer</h3>
-                        <p>Reinforcement learning agent that masters complex strategy games using Deep Q-Networks and Monte Carlo Tree Search. Achieved superhuman performance in multiple game environments.</p>
+                        <h3>Osteoporosis Detection</h3>
+                        <p>ML-based risk assessment system using medical history analysis for early osteoporosis detection and prevention.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" target="_blank">🔗 GitHub</a>
-                            <a href="#" target="_blank">🎯 Play Demo</a>
+                            <a href="https://github.com/siddhyaaddy/Detection-of-Osteoporosis" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div class="project-card" data-category="analytics">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fab fa-bitcoin"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Crypto Analysis Dashboard</h3>
+                        <p>Comprehensive cryptocurrency market analysis using Snowflake's data warehouse with real-time tracking and predictive insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Snowflake</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/siddhyaaddy/crypto-tracking-analysis-snowflake" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="ml">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-comments"></i></div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sentiment Wars</h3>
+                        <p>Comprehensive sentiment analysis pipeline comparing traditional ML techniques with transformer-based LLMs, including robustness testing.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/siddhyaaddy/sentiment-wars" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </section>
@@ -206,41 +610,62 @@
     <!-- Education Section -->
     <section id="education">
         <div class="container">
-            <h2>Academic Journey</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Academic Journey</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Master of Science in Data Science</h3>
-                        <h4>Stanford University</h4>
-                        <p>Advanced coursework in Deep Learning, Probabilistic Graphical Models, and Computational Statistics. Thesis on "Quantum Machine Learning Applications in Financial Modeling"</p>
-                        <p><strong>GPA:</strong> 3.9/4.0 | <strong>Awards:</strong> Dean's List, Research Excellence Award</p>
-                    </div>
                     <div class="timeline-date">2024-2026</div>
+                    <div class="timeline-content">
+                        <div class="degree-header">
+                            <h3>Master of Science in Data Science</h3>
+                            <div class="institution">University at Buffalo</div>
+                        </div>
+                        <div class="degree-details">
+                            <p>Specialized program focusing on advanced data analytics, machine learning algorithms, and computational statistics with emphasis on real-world applications.</p>
+                            <div class="coursework">
+                                <h4>Key Coursework:</h4>
+                                <div class="course-tags">
+                                    <span class="course-tag">Deep Learning</span>
+                                    <span class="course-tag">Statistical Analysis</span>
+                                    <span class="course-tag">Data Mining</span>
+                                    <span class="course-tag">Big Data Analytics</span>
+                                </div>
+                            </div>
+                            <div class="academic-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">GPA</span>
+                                    <span class="metric-value">3.4/4.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Bachelor of Science in Computer Science</h3>
-                        <h4>MIT</h4>
-                        <p>Specialized in Artificial Intelligence and Machine Learning. Relevant coursework: Algorithms, Linear Algebra, Statistics, Database Systems, Neural Networks</p>
-                        <p><strong>GPA:</strong> 3.8/4.0 | <strong>Honors:</strong> Magna Cum Laude, Phi Beta Kappa</p>
-                    </div>
                     <div class="timeline-date">2020-2024</div>
-                </div>
-                <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Advanced Data Science Certification</h3>
-                        <h4>Google Cloud Platform</h4>
-                        <p>Comprehensive program covering MLOps, TensorFlow Extended, and production-scale machine learning deployment strategies.</p>
+                        <div class="degree-header">
+                            <h3>Bachelor of Engineering in Computer Engineering</h3>
+                            <div class="institution">Savitribai Phule Pune University</div>
+                        </div>
+                        <div class="degree-details">
+                            <p>Comprehensive engineering program with strong foundation in software development, algorithms, and data structures with specialization in data science applications.</p>
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Data Science Honors</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Academic Excellence</span>
+                                </div>
+                            </div>
+                            <div class="academic-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">GPA</span>
+                                    <span class="metric-value">3.7/4.0</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="timeline-date">2023</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Deep Learning Specialization</h3>
-                        <h4>Coursera - DeepLearning.AI</h4>
-                        <p>5-course specialization covering Neural Networks, CNNs, RNNs, and Transformer architectures. Completed with distinction.</p>
-                    </div>
-                    <div class="timeline-date">2022</div>
                 </div>
             </div>
         </div>
@@ -249,60 +674,216 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Senior Data Science Intern</h3>
-                        <h4>Meta (Facebook)</h4>
-                        <p>Led development of recommendation algorithms serving 2B+ users. Improved engagement metrics by 18% through advanced deep learning techniques and A/B testing frameworks.</p>
-                        <ul>
-                            <li>Designed and implemented large-scale ML pipelines using PyTorch and TensorFlow</li>
-                            <li>Collaborated with cross-functional teams on product optimization strategies</li>
-                            <li>Published internal research on attention mechanisms in recommendation systems</li>
-                        </ul>
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-date">Feb 2024</div>
+                    <div class="experience-content">
+                        <div class="position-header">
+                            <h3>Data Science Trainee</h3>
+                            <div class="company">
+                                <span class="company-name">MedTourEasy</span>
+                                <span class="company-type">Healthcare Tech</span>
+                            </div>
+                        </div>
+                        <div class="role-description">
+                            <p>Specialized in healthcare analytics with focus on medical tourism data. Developed comprehensive data preprocessing pipelines and statistical analysis frameworks.</p>
+                            <div class="key-achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Implemented end-to-end data science workflows</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-database"></i>
+                                    <span>Cleaned and analyzed complex fitness datasets</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Created interactive data visualizations</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="technologies-used">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Matplotlib</span>
+                            <span class="tech-badge">Statistical Analysis</span>
+                        </div>
                     </div>
-                    <div class="timeline-date">Summer 2024</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Machine Learning Research Assistant</h3>
-                        <h4>Stanford AI Lab</h4>
-                        <p>Contributed to cutting-edge research in explainable AI and neural architecture search. Co-authored 3 papers published in top-tier conferences including NeurIPS and ICML.</p>
-                        <ul>
-                            <li>Developed novel interpretability techniques for transformer models</li>
-                            <li>Implemented automated neural architecture search algorithms</li>
-                            <li>Mentored undergraduate students in research methodologies</li>
-                        </ul>
+                <div class="experience-item">
+                    <div class="experience-date">Sep - Oct 2023</div>
+                    <div class="experience-content">
+                        <div class="position-header">
+                            <h3>Data Science Intern</h3>
+                            <div class="company">
+                                <span class="company-name">INTERNSAVY</span>
+                                <span class="company-type">IT/Software</span>
+                            </div>
+                        </div>
+                        <div class="role-description">
+                            <p>Hands-on experience in data mining, predictive modeling, and advanced analytics across multiple domains including education and sports analytics.</p>
+                            <div class="project-highlights">
+                                <div class="project-highlight">
+                                    <h4>Graduate Admission Prediction</h4>
+                                    <p>Classification model with 89% accuracy</p>
+                                </div>
+                                <div class="project-highlight">
+                                    <h4>Customer Segmentation Analysis</h4>
+                                    <p>K-means clustering with actionable insights</p>
+                                </div>
+                                <div class="project-highlight">
+                                    <h4>Cricket Performance Prediction</h4>
+                                    <p>Multi-variate regression modeling</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="technologies-used">
+                            <span class="tech-badge">Machine Learning</span>
+                            <span class="tech-badge">Data Visualization</span>
+                            <span class="tech-badge">Predictive Modeling</span>
+                        </div>
                     </div>
-                    <div class="timeline-date">2023-Present</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Data Analytics Intern</h3>
-                        <h4>Tesla</h4>
-                        <p>Analyzed autonomous vehicle sensor data to improve safety algorithms. Developed real-time anomaly detection systems for manufacturing quality control.</p>
-                        <ul>
-                            <li>Processed terabytes of sensor data using Apache Spark and Kafka</li>
-                            <li>Built computer vision models for quality assurance in production lines</li>
-                            <li>Created interactive dashboards for executive-level reporting</li>
-                        </ul>
+                <div class="experience-item">
+                    <div class="experience-date">Jan - Feb 2023</div>
+                    <div class="experience-content">
+                        <div class="position-header">
+                            <h3>Software Development Intern</h3>
+                            <div class="company">
+                                <span class="company-name">TechBulls SoftTech Pvt. Ltd</span>
+                                <span class="company-type">Software Development</span>
+                            </div>
+                        </div>
+                        <div class="role-description">
+                            <p>Developed comprehensive Employee Management System with advanced CRUD operations and integrated analytics for workforce optimization.</p>
+                            <div class="key-achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-database"></i>
+                                    <span>Database Administration &amp; Optimization</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-code"></i>
+                                    <span>Full-stack Python Development</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-analytics"></i>
+                                    <span>Employee Analytics Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="technologies-used">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Database Design</span>
+                            <span class="tech-badge">Analytics</span>
+                        </div>
                     </div>
-                    <div class="timeline-date">Summer 2023</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Junior Data Scientist</h3>
-                        <h4>Startup Accelerator Program</h4>
-                        <p>Founded and led data science initiatives for early-stage startups. Provided ML consulting services and developed MVPs for 5+ companies.</p>
-                        <ul>
-                            <li>Built end-to-end ML solutions from data collection to deployment</li>
-                            <li>Conducted market analysis using advanced statistical techniques</li>
-                            <li>Mentored fellow entrepreneurs in data-driven decision making</li>
-                        </ul>
+                <div class="experience-item">
+                    <div class="experience-date">Aug 2022 - Oct 2023</div>
+                    <div class="experience-content">
+                        <div class="position-header">
+                            <h3>Content &amp; Data Analytics Intern</h3>
+                            <div class="company">
+                                <span class="company-name">Knowledge Gate Eduventure LLP</span>
+                                <span class="company-type">EdTech</span>
+                            </div>
+                        </div>
+                        <div class="role-description">
+                            <p>Applied data analytics to optimize educational content platforms, focusing on user engagement metrics and learning outcome improvements.</p>
+                            <div class="key-achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Content performance analytics using Excel</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-users"></i>
+                                    <span>User engagement pattern analysis</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Data-driven content optimization strategies</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="technologies-used">
+                            <span class="tech-badge">Excel Analytics</span>
+                            <span class="tech-badge">Statistical Analysis</span>
+                            <span class="tech-badge">Backend Development</span>
+                            <span class="tech-badge">CRUD Operations</span>
+                        </div>
                     </div>
-                    <div class="timeline-date">2022-2023</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Data Science Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2><i class="fas fa-award"></i> Data Science Certifications</h2>
+            <div class="certifications-timeline">
+                
+                <!-- Add your certifications here -->
+
+                <div class="certification-item">
+                    <div class="certification-date">2025</div>
+                    <div class="certification-content">
+                        <div class="certification-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>IBM Data Science Professional Certificate</h3>
+                            <div class="certification-issuer">
+                                <span class="issuer-name">Coursera</span>
+                            </div>
+                        </div>
+                        <div class="certification-description">
+                            <p>Mastered key data science skills including Python, SQL, data cleaning, analysis, visualization, and machine learning model building. Developed a portfolio of real-world projects to demonstrate proficiency.</p>
+                        </div>
+                        <!-- <div class="certification-skills">
+                            <span class="skill-badge">Skill 1</span>
+                            <span class="skill-badge">Skill 2</span>
+                            <span class="skill-badge">Skill 3</span>
+                        </div> -->
+                        <a href="#" class="certification-link" target="_blank">
+                            <i class="fas fa-certificate"></i>
+                            View Certificate
+                        </a>
+                        <div class="credential-id">Credential ID: </div>
+                    </div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-date">Aug 2023</div>
+                    <div class="certification-content">
+                        <div class="certification-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Google Data Analytics Specialization</h3>
+                            <div class="certification-issuer">
+                                <span class="issuer-name">Coursera</span>
+                            </div>
+                            
+                        </div>
+                        <div class="certification-description">
+                            <p>Hands on, practice based assessments and are designed to prepare them for introductory-level roles in Data Analyucs. They are competent in tools and platforms including spreadsheets, SQL, Tableau, and R.
+They know how to prepare, process, analyze, and share data for thoughtful action.</p>
+                        </div>
+                        <!-- <div class="certification-skills">
+                            <span class="skill-badge">Skill 1</span>
+                            <span class="skill-badge">Skill 2</span>
+                            <span class="skill-badge">Skill 3</span>
+                        </div> -->
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/Y28VHBTMBK87" class="certification-link" target="_blank">
+                            <i class="fas fa-certificate"></i>
+                            View Certificate
+                        </a>
+                        <div class="credential-id">Credential ID: Y28VHBTMBK87</div>
+                    </div>
+                </div>
+
+                <!-- Add more certification items as needed -->
+                
             </div>
         </div>
     </section>
@@ -310,26 +891,88 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Let's Connect</h2>
+            <h2><i class="fas fa-satellite-dish"></i> Let's Connect</h2>
             <div class="contact-content">
-                <p>Ready to collaborate on the next breakthrough in data science? Let's turn your data challenges into innovative solutions!</p>
-                <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-link">
-                        📧 Email Me
-                    </a>
-                    <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
-                        💼 LinkedIn
-                    </a>
-                    <a href="https://github.com/yourusername" class="contact-link" target="_blank">
-                        🐙 GitHub
-                    </a>
-                    <a href="https://kaggle.com/yourusername" class="contact-link" target="_blank">
-                        🏆 Kaggle
+                <div class="contact-intro">
+                    <h3>Ready to Transform Data into Insights?</h3>
+                    <p>Let's collaborate on your next data science project and turn complex challenges into intelligent solutions</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <a href="mailto:siddharthadhikari.workspace@gmail.com"></a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/siddharth-adhikari-40199b203/" target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/siddhyaaddy" target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-kaggle"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Kaggle</h4>
+                            <a href="https://www.kaggle.com/siddharthadhikari07" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <a href="mailto:siddharthadhikari.workspace@gmail.com" class="contact-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Start a Conversation
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>Siddharth Adhikari</span>
+                    </div>
+                    <p>Data Science Professional | Turning Data into Decisions</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-social">
+                        <a href="https://github.com/siddhyaaddy" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/siddharth-adhikari-40199b203/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.kaggle.com/siddharthadhikari07" target="_blank"><i class="fab fa-kaggle"></i></a>
+                        <a href="mailto:siddharthadhikari.workspace@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <p>&copy; 2024 Siddharth Adhikari. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/script.js"></script>
 </body>

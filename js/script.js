@@ -1092,20 +1092,18 @@ if (typeof module !== 'undefined' && module.exports) {
 
 // 👇 ADD THIS AT THE VERY BOTTOM
 
-// Mobile menu toggle
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-if (menuBtn && navLinks) {
-  menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-}
-
-// Disable heavy animations on mobile
+// --------------------
+// MOBILE OPTIMIZATIONS
+// --------------------
 if (window.innerWidth < 768) {
-  document.getElementById("heroChart")?.remove();
-  document.getElementById("dataVisualization")?.remove();
-  document.getElementById("particles")?.remove();
+  // Disable heavy visuals safely
+  const heroChart = document.getElementById("heroChart");
+  if (heroChart) heroChart.style.display = "none";
+
+  const dataViz = document.getElementById("dataVisualization");
+  if (dataViz) dataViz.style.display = "none";
+
+  const particles = document.getElementById("particles");
+  if (particles) particles.style.display = "none";
 }
 

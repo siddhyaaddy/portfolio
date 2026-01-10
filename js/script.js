@@ -1082,3 +1082,30 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = DataSciencePortfolio;
 }
 
+
+
+// update
+
+/* ---------------------------
+   EXISTING CODE ABOVE
+---------------------------- */
+
+// 👇 ADD THIS AT THE VERY BOTTOM
+
+// Mobile menu toggle
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
+
+// Disable heavy animations on mobile
+if (window.innerWidth < 768) {
+  document.getElementById("heroChart")?.remove();
+  document.getElementById("dataVisualization")?.remove();
+  document.getElementById("particles")?.remove();
+}
+

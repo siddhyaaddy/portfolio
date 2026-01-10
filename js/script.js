@@ -1081,29 +1081,3 @@ if ('serviceWorker' in navigator) {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = DataSciencePortfolio;
 }
-
-
-
-// update
-
-/* ---------------------------
-   EXISTING CODE ABOVE
----------------------------- */
-
-// 👇 ADD THIS AT THE VERY BOTTOM
-
-// --------------------
-// MOBILE OPTIMIZATIONS
-// --------------------
-if (window.innerWidth < 768) {
-  // Disable heavy visuals safely
-  const heroChart = document.getElementById("heroChart");
-  if (heroChart) heroChart.style.display = "none";
-
-  const dataViz = document.getElementById("dataVisualization");
-  if (dataViz) dataViz.style.display = "none";
-
-  const particles = document.getElementById("particles");
-  if (particles) particles.style.display = "none";
-}
-
